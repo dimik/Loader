@@ -1,0 +1,25 @@
+.list-item {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+  text-decoration: none;
+  width: 100%;
+  box-sizing: border-box;
+  text-align: left;
+  padding: 8px 0px;
+}
+
+.list-item--avatar {
+  justify-content: space-between;
+}
+
+.list-item--divider {
+  border-bottom: 1px solid lightgrey;
+  background-clip: padding-box;
+}
+
+.list-item--gutters {
+  padding-left: 16px;
+  padding-right: 16px;
+}

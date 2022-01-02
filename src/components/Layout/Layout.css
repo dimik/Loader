@@ -1,0 +1,10 @@
+.layout {
+  max-width: 940px;
+  padding: 16px;
+}
+
+.layout__fab {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+}

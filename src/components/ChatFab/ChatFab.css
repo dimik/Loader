@@ -1,0 +1,10 @@
+.chat-fab {
+  background: royalblue;
+  color: white;
+  z-index: 1000;
+}
+
+.chat-fab svg {
+  width: 24px;
+  height: 24px;
+}

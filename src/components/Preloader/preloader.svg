@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 40">
+    <circle id="green-circle" cx="10" cy="20" r="10" fill="lightgreen"/>
+    <circle id="blue-circle" cx="30" cy="20" r="10" fill="blue"/>
+    <circle id="red-circle" cx="50" cy="20" r="10" fill="red"/>
+    <circle id="indigo-circle" cx="70" cy="20" r="10" fill="indigo"/>
+    <animate
+            xlink:href="#green-circle"
+            attributeName="cy"
+            dur=".8s"
+            fill="freeze"
+            d="circ-anim"
+            values="15; 25; 15"
+            keySplines=".42 0 1 1; 0 0 .59 1; .42 0 1 1"
+            keyTimes="0; 0.5; 1"
+            repeatCount="indefinite"
+    />
+    <animate
+            xlink:href="#blue-circle"
+            attributeName="cy"
+            dur=".8s"
+            begin=".1s"
+            fill="freeze"
+            d="circ-anim"
+            values="15; 25; 15"
+            keySplines=".42 0 1 1; 0 0 .59 1; .42 0 1 1"
+            keyTimes="0; 0.5; 1"
+            repeatCount="indefinite"
+    />
+    <animate
+            xlink:href="#red-circle"
+            attributeName="cy"
+            dur=".8s"
+            begin=".2s"
+            fill="freeze"
+            d="circ-anim"
+            values="15; 25; 15"
+            keySplines=".42 0 1 1; 0 0 .59 1; .42 0 1 1"
+            keyTimes="0; 0.5; 1"
+            repeatCount="indefinite"
+    />
+    <animate
+            xlink:href="#indigo-circle"
+            attributeName="cy"
+            dur=".8s"
+            begin=".3s"
+            fill="freeze"
+            d="circ-anim"
+            values="15; 25; 15"
+            keySplines=".42 0 1 1; 0 0 .59 1; .42 0 1 1"
+            keyTimes="0; 0.5; 1"
+            repeatCount="indefinite"
+    />
+</svg>
