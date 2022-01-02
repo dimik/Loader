@@ -8,11 +8,12 @@ class Layout extends DOMComponent {
     super({
       ...data,
       className: clsx('layout', className),
+      'data-testid': 'layout',
     })
   }
 
   render(parentElement, ...children) {
-    const fab = new ChatFab({className: 'layout__fab'})
+    const fab = new ChatFab({className: 'layout__fab', 'data-testid': 'chat-fab'})
     return super.render(parentElement, ...children, fab.render())
   }
 }

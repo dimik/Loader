@@ -15,12 +15,19 @@ class App extends DOMComponent {
   getNetologyPrograms = async () => {
     const preloader = new Preloader()
     preloader.render(this.container())
+
     const json = await netology.getPrograms()
+
     preloader.destroy()
+
     const header = new Header()
     header.render(this.container())
     const list = new List()
-    const listItems = json.map(({direction: {title}, groups}) => {
+    list.render(this.container(), ...this.createListItems(json))
+  }
+
+  createListItems(json) {
+    return json.map(({direction: {title}, groups}) => {
       const listItem = new ListItem({avatar: true, divider: true})
       const listItemAvatar = new ListItemAvatar()
       const avatar = new Avatar()
@@ -34,7 +41,6 @@ class App extends DOMComponent {
         listItemAvatar.render(null, avatar.render()),
       )
     })
-    list.render(this.container(), ...listItems)
   }
 
   render(parentElement) {

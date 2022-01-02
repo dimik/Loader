@@ -15,7 +15,7 @@ class DOMComponent {
     }
     this.setupListeners(listeners)
     for (const prop in props) {
-      this.element[prop] = props[prop]
+      this.element.setAttribute(prop, props[prop])
     }
 
     return this

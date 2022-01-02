@@ -1,19 +1,31 @@
 /**
  * @jest-environment jsdom
  */
-
 import {
   getByTestId,
   waitFor,
 } from '@testing-library/dom'
-// adds special assertions like toHaveTextContent
 import '@testing-library/jest-dom'
 import App from '..'
-const app = new App()
+
+async function mockFetch(url, config) {
+  return {
+    ok: true,
+    status: 200,
+    json: async () => ([]),
+  }
+}
 
 describe('App root', () => {
-  it('should match snapshot', () => {
-    const container = app.render()
-    expect(container.innerHTML).toBe('blah')
+  beforeAll(() => jest.spyOn(globalThis, 'fetch'))
+  beforeEach(() => globalThis.fetch.mockImplementation(mockFetch))
+  it('should call fetch with netology url', () => {
+    const app = new App()
+    app.render()
+    expect(globalThis.fetch).toBeCalledWith(process.env.NETOLOGY_URL)
+  })
+  it('should render layout', () => {
+    const app = new App()
+    expect(getByTestId(app.render(), 'layout')).toBeTruthy()
   })
 })
