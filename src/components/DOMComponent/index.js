@@ -7,6 +7,10 @@ class DOMComponent {
   }
 
   init() {
+    if (this.inited) {
+      return
+    }
+    this.inited = true
     this.element = document.createElement(this.tagName)
     const {className: classNameProp, classes, listeners, ...props} = this.props
     const className = clsx(classes, classNameProp)
@@ -25,6 +29,7 @@ class DOMComponent {
     this.removeListeners()
     this.element.remove()
     this.element = null
+    this.inited = false
 
     return this
   }
